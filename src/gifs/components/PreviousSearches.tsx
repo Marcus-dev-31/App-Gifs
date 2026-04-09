@@ -1,9 +1,9 @@
 interface PreviousSearchesProps {
   searches: string[];
-  onclick: (term: string) => void;
+  onClick: (term: string) => void;
 }
 
-export const PreviousSearches = ({ searches, onclick }: PreviousSearchesProps) => {
+export const PreviousSearches = ({ searches, onClick }: PreviousSearchesProps) => {
   return (
     <div className="previous-searches">
       <h2>Busquedas Previas</h2>
@@ -11,7 +11,7 @@ export const PreviousSearches = ({ searches, onclick }: PreviousSearchesProps) =
         {searches.map((term) => (
           <li 
             key={term}
-            onClick={ () => onclick(term) }
+            onClick={ () => onClick(term) }
           >{term}</li>
         ))}
       </ul>

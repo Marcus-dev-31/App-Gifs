@@ -31,7 +31,7 @@ export const GifsApp = () => {
 
       <PreviousSearches 
         searches={PreviousTerms} 
-        onclick={handleTermClick}
+        onClick={handleTermClick}
         />
 
       <GifList gifs={mockGifs} />
