@@ -1,7 +1,7 @@
 import { useState, type KeyboardEvent } from "react";
 
 interface SearchBarProps {
-  placeholder: string;
+  placeholder?: string;
   onQuery: (query: string) => void;
 }
 
@@ -9,9 +9,11 @@ export const SearchBar = ({
   placeholder = "Buscar",
   onQuery,
 }: SearchBarProps) => {
+
   const [query, setQuery] = useState("");
 
   const handleSearch = () => {
+    if (query.trim() === "") return;
     onQuery(query);
     setQuery("");
   };
@@ -34,4 +36,4 @@ export const SearchBar = ({
       <button onClick={handleSearch}>Buscar</button>
     </div>
   );
-};
+}; 
